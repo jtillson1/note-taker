@@ -17,7 +17,7 @@ fs.writeFileSync(
     JSON.stringify({ notes: notesArray }, null, 2)
 );
     return note;
-}
+};
 
 app.get('/api/notes', (req, res) => {
     res.json(notes);

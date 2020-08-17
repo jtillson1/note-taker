@@ -27,6 +27,7 @@ html, body {
   resize: none;
   height: calc(100% - 63px);
   padding-top: 15px;
+  
 }
 
 .note-title {
