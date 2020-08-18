@@ -4,6 +4,7 @@ const express = require('express');
 const PORT = process.env.PORT || 3001;
 const app = express();
 const { notes } = require('./db/db.json');
+const uniqid = require('uniqid');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -26,7 +27,9 @@ app.get('/api/notes', (req, res) => {
 app.post('/api/notes', (req, res) => {
     //add note to json file and notes array
     const note = createNewNote(req.body, notes);
-
+    
+    note.id = uniqid();
+    console.log(note);
     res.json(note);
 });
 
